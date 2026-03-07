@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c4su6sfku5lcc"]
+
+[ext_resource type="SpriteFrames" uid="uid://bbj0qwtddwkui" path="res://escenas/personaje/sprite_frames_personaje.tres" id="1_jqp8e"]
+[ext_resource type="Script" uid="uid://c45iiattaifkt" path="res://escenas/personaje/personaje.gd" id="1_yv5yb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yv5yb"]
+size = Vector2(15, 16)
+
+[node name="personaje" type="CharacterBody2D" unique_id=1668861504]
+script = ExtResource("1_yv5yb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1016358248]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_yv5yb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=601593778]
+sprite_frames = ExtResource("1_jqp8e")
+animation = &"idle"
