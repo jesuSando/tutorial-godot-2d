@@ -6,13 +6,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yv5yb"]
 size = Vector2(15, 16)
 
-[node name="personaje" type="CharacterBody2D" unique_id=1668861504]
+[node name="personaje" type="CharacterBody2D" unique_id=1668861504 node_paths=PackedStringArray("animacion")]
 script = ExtResource("1_yv5yb")
+animacion = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1016358248]
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_yv5yb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=601593778]
+unique_name_in_owner = true
 sprite_frames = ExtResource("1_jqp8e")
 animation = &"idle"
