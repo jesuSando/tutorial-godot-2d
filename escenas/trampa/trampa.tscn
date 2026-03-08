@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cecueeelney1a"]
+
+[ext_resource type="Script" uid="uid://d21jlu0arbe2r" path="res://escenas/trampa/trampa.gd" id="1_fvinj"]
+[ext_resource type="Texture2D" uid="uid://47o35pl1b7ou" path="res://sprites/tileset_mazmorra.png" id="2_s0k0e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x47gh"]
+atlas = ExtResource("2_s0k0e")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_we6vm"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvinj"]
+size = Vector2(16, 2)
+
+[node name="Trampa" type="RigidBody2D" unique_id=1957529045 node_paths=PackedStringArray("raycast")]
+collision_mask = 5
+lock_rotation = true
+freeze = true
+script = ExtResource("1_fvinj")
+raycast = NodePath("RayCast2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1760223791]
+texture = SubResource("AtlasTexture_x47gh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=408662116]
+shape = SubResource("RectangleShape2D_we6vm")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=816404920]
+target_position = Vector2(0, 250)
+collision_mask = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=187439101]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1742187326]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_fvinj")
